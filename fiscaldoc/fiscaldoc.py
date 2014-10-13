@@ -267,7 +267,7 @@ firmata digitalmente della fattura XML PA in data \
 
 
 
-class einvoice_history(osv.osv):
+class einvoice_history(orm.Model):
 
     _name = "einvoice.history"
 
