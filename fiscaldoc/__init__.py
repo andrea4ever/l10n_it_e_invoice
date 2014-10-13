@@ -21,8 +21,4 @@
 #
 ##############################################################################
 
-import company
-import partner
-import fiscaldoc
-#~ import account
-import wizard
+from . import fiscaldoc

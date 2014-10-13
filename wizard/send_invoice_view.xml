@@ -26,7 +26,7 @@
         <record id="action_send_e-invoice" model="ir.actions.act_window">
             <field name="name">Send E-Invoice</field>
             <field name="res_model">wizard.send.invoice</field>
-            <field name="src_model">account.invoice</field>
+            <field name="src_model">fiscaldoc.header</field>
             <field name="view_type">form</field>
             <field name="view_mode">form</field>
             <field name="target">new</field>
@@ -40,7 +40,7 @@
             key2="client_action_multi"
             name="Send E-Invoice"
             res_model="wizard.send.invoice"
-            src_model="account.invoice"
+            src_model="fiscaldoc.header"
             view_id="wizard_send_einvoice"
             view_mode="form" target="new" view_type="form" />
 

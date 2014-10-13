@@ -22,23 +22,25 @@
 ##############################################################################
 
 {
-    'name': "Electronic Invoice",
+    'name': "Electronic Invoice from FiscalDoc",
     'version': '0.1',
     'category': 'Account',
     'description': """
 Electronic Invoice Management - Italian Law
 Modulo di gestione fatturazione elettronica""",
-    'author': 'Apulia Software srl <info@apuliasoftware.it>',
+    'author': 'Andrea Gallina - Forked from Apulia Software srl <info@apuliasoftware.it>',
     'website': 'www.apuliasoftware.it',
     'license': 'AGPL-3',
-    "depends": ['account', ],
+    "depends": [
+        'account',
+        'ItalianFiscalDocument',
+        ],
     "data": [
         'security/security.xml',
         'security/ir.model.access.csv',
         'partner/partner_view.xml',
         'company/company_view.xml',
-        'account/account_view.xml',
-        'account/e-invoice_data.xml',
+        'fiscaldoc/fiscaldoc_view.xml',
         'wizard/send_invoice_view.xml',
         ],
     "active": False,

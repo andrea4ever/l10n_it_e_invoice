@@ -89,20 +89,15 @@ class wizard_send_invoice(osv.osv_memory):
 
         # ---- Select the printing module to print and create PDF
         invoice_ids = context.get('active_ids', [])
-        invoice_obj = self.pool.get('account.invoice')
+        invoice_obj = self.pool.get('fiscaldoc.header')
         invoice = invoice_obj.browse(cr, uid, invoice_ids, context)[0]
-        report_name = invoice.journal_id.printing_module.report_name or False
+        report_name = invoice.tipo_doc.tipo_modulo_stampa.report_name or False
 
         # ---- check if invoice can be send to SDI
-        if not invoice.journal_id.e_invoice:
+        if not invoice.tipo_doc.causale_pa:
             raise osv.except_osv(
                 _('Error'),
                 _('Is not E-Invoice check your Journal config!'))
-        if invoice.einvoice_state not in ('draft', 'sent'):
-            raise osv.except_osv(
-                _('Error!'),
-                _('invoice has already been processed, \
-                   you can not proceed to send!'))
 
         # ---- Standard for file name is:
         # ---- ITpartita_iva_mittente<...>.pdf
