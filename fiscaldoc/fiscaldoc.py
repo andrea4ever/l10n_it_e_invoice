@@ -280,4 +280,4 @@ class einvoice_history(orm.Model):
         'status_desc': fields.text('Status Desc'),
         'xml_content': fields.text('XML File Content'),
     }
-s
+
