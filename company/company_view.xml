@@ -9,6 +9,7 @@
         <field name="arch" type="xml">
             <page string="Configuration" position="inside">
                 <separator string="E-Invoice" colspan="4"/>
+
                 <group>
                 <field name="e_invoice_ftp_path" colspan="2"/>
                 <field name="e_invoice_ftp_port" colspan="2"

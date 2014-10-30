@@ -89,6 +89,7 @@ class wizard_send_invoice(osv.osv_memory):
 
         # ---- Select the printing module to print and create PDF
         invoice_ids = context.get('active_ids', [])
+
         invoice_obj = self.pool.get('fiscaldoc.header')
         invoice = invoice_obj.browse(cr, uid, invoice_ids, context)[0]
         report_name = invoice.tipo_doc.tipo_modulo_stampa.report_name or False

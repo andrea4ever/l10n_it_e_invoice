@@ -22,6 +22,7 @@
 ##############################################################################
 
 {
+
     'name': "Electronic Invoice from FiscalDoc",
     'version': '0.1',
     'category': 'Account',
@@ -41,6 +42,7 @@ Modulo di gestione fatturazione elettronica""",
         'partner/partner_view.xml',
         'company/company_view.xml',
         'fiscaldoc/fiscaldoc_view.xml',
+        'account/e-invoice_data.xml',
         'wizard/send_invoice_view.xml',
         ],
     "active": False,
