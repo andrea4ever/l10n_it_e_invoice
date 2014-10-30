@@ -64,7 +64,7 @@ class FiscalDocHeader(orm.Model):
 
     def convert_timestamp(self, value):
         return datetime.fromtimestamp(
-            int(value)).strftime('%Y-%m-%d %H:%M:%S')
+            int(value)/1e3).strftime('%Y-%m-%d %H:%M:%S')
 
     def create(self, cr, uid, vals, context=None):
         if not vals:
@@ -219,8 +219,7 @@ firmata digitalmente della fattura XML PA in data \
                 continue
             if not filename.startswith(company_vat):
                 continue
-            filename_value = filename.split('_')
-            invoice_number = filename_value[1].replace('-', '/')
+            invoice_number = filename[13:22].replace('_', '/')
             # ----- Search the invoice
             invoice_ids = self.search(
                 cr, uid, [('number', '=', invoice_number)])
